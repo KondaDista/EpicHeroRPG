@@ -18,7 +18,6 @@ namespace Player
             InventoryInited?.Invoke(Items);
         }
 
-        // Реализовать метод
         public void ChangeItemInInventoryAt(int id, int amount)
         {
             Items[id] += amount;

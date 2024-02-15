@@ -65,7 +65,7 @@ public class LocationBuilder : MonoBehaviour
 
     private static void RandomFlip(SpriteRenderer texture2D)
     {
-        if (Random.Range(0, 2) == 0) // Генерируем случайное число (0 или 1)
+        if (Random.Range(0, 2) == 0)
         {
             texture2D.flipX = !texture2D.flipX;
         }

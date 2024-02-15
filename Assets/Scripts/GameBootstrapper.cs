@@ -21,8 +21,8 @@ public class GameBootstrapper : MonoBehaviour
     private void Awake()
     {
         _executer = new MethodFromStringExecuter(_game ,_player, _inventory);
-        _playerStartInfo = LoadFromJson<PlayerStartInfo>(_startCharacteristicsFile);    //Добавить тип
-        _gameNodes = LoadFromJson<GameNodes>(_gameConfigFile);                    //Добавить тип
+        _playerStartInfo = LoadFromJson<PlayerStartInfo>(_startCharacteristicsFile);    
+        _gameNodes = LoadFromJson<GameNodes>(_gameConfigFile);                    
     }
 
     private void Start()
@@ -45,8 +45,8 @@ public class GameBootstrapper : MonoBehaviour
         
         if (textAsset)
         {
-            string textJSON = textAsset.text;                                                            //Прочитать текст из переданного textAsset
-            toObject = JsonUtility.FromJson<T>(textJSON);                                                              //Распарсить полученный JSON в переменную toObject
+            string textJSON = textAsset.text;
+            toObject = JsonUtility.FromJson<T>(textJSON);
             print($"JSON loaded! {textAsset.name}");
         }
         else

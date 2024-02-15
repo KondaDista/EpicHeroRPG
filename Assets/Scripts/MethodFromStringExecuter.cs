@@ -1,4 +1,5 @@
-﻿using Player;
+﻿using System;
+using Player;
 
 ///<summary>
 /// Обёртка для вызова методов с помощтю строки и списка аргументов.
@@ -51,7 +52,7 @@ public class MethodFromStringExecuter
 
     public void ChangeItemsInInventoryByID(int id, int count) =>
         _inventory.ChangeItemInInventoryAt(id, count);
-
+    
     public void Win() =>
         _game.Win();
 

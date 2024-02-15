@@ -22,7 +22,7 @@ namespace UI
             _text.text = $"[{number}] {variant.text}";
             _mainButton.onClick.AddListener(() =>
             {
-                GameLog.Instance.Log($"Выбран выриант: {variant.text}");
+                GameLog.Instance.Log($"Выбран вариант: {variant.text}");
                 Game.Instance.GoToDialog(variant.to);
             });
             foreach (var action in variant.actions)
@@ -32,7 +32,6 @@ namespace UI
                 {
                     MethodFromStringExecuter.Instance.InvokeMethod(action.name, objArray);
                 });
-                 // Привязать выполнение actions описанных в MethodFromStringExecuter к событию по нажатию кнопки ответа (с 25 по 28 строки) 
             }
         }
 

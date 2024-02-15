@@ -11,8 +11,8 @@ namespace UI
         
         public void Init(DialogNode dialog)
         {
-            text.text = dialog.text; // Назначить текст
-            _answersPanel.Init(dialog.variants); // Инициализируем панель с ответами
+            text.text = dialog.text;
+            _answersPanel.Init(dialog.variants);
         }
     }
 }
