@@ -83,7 +83,16 @@
               "text": "Жаль, что Вы тоже не понимаете о чем говорит собеседник. Придется вернуться и продолжить путь.",
               "to": 1,
               "conditions": [],
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [0,5]
+                },
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [1,2]
+                }
+              ]
             }
           ]
         }
