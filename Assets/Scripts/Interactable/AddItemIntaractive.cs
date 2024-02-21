@@ -9,6 +9,9 @@ namespace Interactable
 
         protected override void DoAction()
         {
+            MethodFromStringExecuter.Instance.ChangeItemsInInventoryByID(_itemId, _count);
+            MethodFromStringExecuter.Instance.ChangeCharacteristic(5, _exp);
+            gameObject.SetActive(false);
         }
     }
 }

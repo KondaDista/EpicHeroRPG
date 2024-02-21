@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using GameConfiguration;
 using UnityEngine;
 
@@ -22,8 +23,17 @@ namespace UI
             
             _currentAnswersButton.Clear();
         
-            foreach (var variant in variants)
+            foreach (var variant in _currentVariants)
             {
+                bool isCondition = true;
+                foreach (var condition in variant.conditions)
+                {
+                    object[] objArray = condition.parameters.Cast<object>().ToArray();
+                    isCondition = MethodFromStringExecuter.Instance.InvokeConditionMethod(condition.name, objArray);
+                }
+                if (!isCondition)
+                    continue;
+                    
                 var newButton = Instantiate(_answerButtonPrefab, transform);
                 _currentAnswersButton.Add(newButton);
                 newButton.Init(_currentAnswersButton.IndexOf(newButton) + 1, variant);

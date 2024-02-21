@@ -24,6 +24,11 @@ namespace Player
             if (Items[id] < 0)
                 Items[id] = 0;
         }
+
+        public bool IsObjectsInInventory(int id, int count)
+        {
+            return Items[id] >= count;
+        }
     }
 }
 

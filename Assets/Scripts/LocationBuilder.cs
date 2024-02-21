@@ -17,6 +17,11 @@ public class LocationBuilder : MonoBehaviour
 
     private readonly List<GameObject> _currentObjects = new List<GameObject>();
 
+    public void ChangeVisibleCharacter()
+    {
+        _characterPlace.gameObject.SetActive(!_characterPlace.gameObject.activeSelf);
+    }
+    
     public void Build(Location location)
     {
         SetImage(_backgroundRenderer, _backgrounds, location.background);
@@ -33,7 +38,6 @@ public class LocationBuilder : MonoBehaviour
         }
 
         renderer.sprite = list[number];
-        RandomFlip(renderer);
     }
 
     private void SpawnObjects(Location location)
@@ -61,14 +65,6 @@ public class LocationBuilder : MonoBehaviour
     {
         _currentObjects.ForEach(Destroy);
         _currentObjects.Clear();
-    }
-
-    private static void RandomFlip(SpriteRenderer texture2D)
-    {
-        if (Random.Range(0, 2) == 0)
-        {
-            texture2D.flipX = !texture2D.flipX;
-        }
     }
 
     private Transform[] GetRandomElements(int n) =>

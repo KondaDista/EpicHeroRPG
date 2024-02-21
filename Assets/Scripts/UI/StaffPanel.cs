@@ -39,5 +39,42 @@ namespace UI
         {
             _elements[id].ChangeCollect(newValue);
         }
+        
+        #region ActionOnClick
+    
+        private void NoneAction()
+        {
+            
+        }
+        private void OnRabbitMeat()
+        {
+            _player.ChangeHealth(5);
+        }
+        private void OnBearMeat()
+        {
+            
+        }
+        private void OnPigMeat()
+        {
+            
+        }
+        private void OnWolfTail()
+        {
+            
+        }
+        private void OnFoxTail()
+        {
+            
+        }
+        private void OnMushroom()
+        {
+            
+        }
+        private void OnGrass()
+        {
+            
+        }
+
+        #endregion
     }
 }

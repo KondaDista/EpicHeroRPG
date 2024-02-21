@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Reflection;
 using Player;
+using Unity.VisualScripting.FullSerializer.Internal;
+using UnityEditor.Profiling;
+using UnityEngine.Events;
 
 ///<summary>
 /// Обёртка для вызова методов с помощтю строки и списка аргументов.
@@ -42,7 +46,9 @@ public class MethodFromStringExecuter
     /// <returns>Выполненно ли условие</returns>
     public bool InvokeConditionMethod(string name, object[] parameters)
     {
-        var method = GetType().GetMethod(name);
+        MethodInfo[] methods = GetType().GetMethods();
+        
+        MethodInfo method = GetType().GetMethod(name);
         if (method != null)
             return (bool) method.Invoke(this,  parameters);
         return false;
@@ -50,12 +56,23 @@ public class MethodFromStringExecuter
 
     #region Actions
 
+    public void ChangeActiveCloseButtonsInPanels() =>
+        _game.ChangeActiveCloseButtonsInPanels();
+    public void ChangeVisibleCharacter() =>
+        _game.ChangeVisibleCharacter();
     public void ChangeItemsInInventoryByID(int id, int count) =>
         _inventory.ChangeItemInInventoryAt(id, count);
+    public void ChangeQuestState(int id, int value)=>
+        _player.ChangeQuestState(id, value);
+    public void ChangeCharacteristic(int id, int value)=>
+        _player.ChangeCharacteristic(id, value);
     
+    public void ChangeDialogImage(int id)=>
+        _game.ChangeDialogImage(id);
+    public void OpenCloseDialogImagePanel()=>
+        _game.OpenCloseDialogImagePanel();
     public void Win() =>
         _game.Win();
-
     public void Lose() =>
         _game.Lose();
     
@@ -63,7 +80,19 @@ public class MethodFromStringExecuter
     
     #region Conditions
     
-    // Дальше тут будет реализация задач 2 недели
+    public bool IsAnswered(int id) =>
+        _game.IsAnswered(id);
+    public bool IsStateQuest(int id, int value)=>
+        _player.IsStateQuest(id, value);
     
+    public bool IsStatMore(int id, int value) =>
+        _player.IsStatMore(id, value);
+    public bool IsStatLess(int id, int value)=> 
+        _player.IsStatLess(id, value);
+    public bool IsStatEqual(int id, int value)=>
+        _player.IsStatEqual(id, value);
+    public bool IsObjectsInInventory(int id, int count) =>
+        _inventory.IsObjectsInInventory(id, count);
+
     #endregion
 }

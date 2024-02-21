@@ -3,28 +3,21 @@
     {
       "id": 0,
       "location": {
-        "background": 1,
+        "background": 0,
         "character": -1,
-        "item": 1,
-        "decorations": [ 0, 1 ]
+        "item": -1,
+        "decorations": []
       },
       "dialogs": [
         {
           "id": 0,
-          "text": "Перед Вами поляна с палаткой по центру.",
+          "text": "В славном городе Ростове жил Алеша Попович, юн он был, но силен не погодам. Мечтал Алеша богатырем стать, землю русскую защищать. Чтобы мирно было все, да спокойно. Но пришла однажды беда на землю русскую, поселилось в соседнем лесу Чудо Юдо не ведомое, толи зверь какой, толи нечеловек злой. По ночам поля топчит да скатину ворует.", 
           "variants": [
             {
               "id": 0,
-              "text": "Пройти мимо и свернуть налево.",
+              "text": "Слушать дальше.",
               "conditions": [],
               "to": 1,
-              "actions": []
-            },
-            {
-              "id": 1,
-              "text": "Пройти мимо и свернуть направо.",
-              "to": 3,
-              "conditions": [],
               "actions": []
             }
           ]
@@ -34,40 +27,19 @@
     {
       "id": 1,
       "location": {
-        "background": 0,
-        "character": 2,
-        "item": 0,
-        "decorations": [ 0, 1, 1, 0, 1 ]
+        "background": 1,
+        "character": -1,
+        "item": -1,
+        "decorations": []
       },
       "dialogs": [
         {
           "id": 1,
-          "text": "У реки рядом с дорогой отдыхает кочевник. Интересно как его сюда занесло?",
+          "text": "Собрался народ Ростовский и думает как эту Чуду Юду изловить да победить. Говорят богатырь нужен, чтоб и силен был и умом наделен. Да никто не решается, Чуду Юду побаиваются, говорят нет в наших краях такого.",
           "variants": [
             {
-              "id": 2,
-              "text": "Обойти кочевника слева и двинуться дальше налево вдоль реки.",
-              "to": 4,
-              "conditions": [],
-              "actions": []
-            },
-            {
-              "id": 3,
-              "text": "Прямо виднеется лес. Обойти кочевника и продолжить путь прямо.",
-              "to": 6,
-              "conditions": [],
-              "actions": []
-            },
-            {
-              "id": 4,
-              "text": "Справа виднеется дымок вдали. Отправиться направо.",
-              "to": 3,
-              "conditions": [],
-              "actions": []
-            },
-            {
-              "id": 5,
-              "text": "Попробовать узнать у кочевника, что интересного здесь происходит.",
+              "id": 1,
+              "text": "Вызваться победить чудише.",
               "to": 2,
               "conditions": [],
               "actions": []
@@ -76,21 +48,39 @@
         },
         {
           "id": 2,
-          "text": "Пытаетесь заговорить, но кочевник не понимает Ваш язык.",
+          "text": "Молод да горяч был Алеша, только не знал он еще, что одной силой не победить ему Чуду Юду. \n Согласился народ ростовский, коли больше не кому защитить их от зверя невиданного. Благословил Алешу на подвиг ратный. Может и получется ему изгнать Чуду Юду из леса ростовского. ",
           "variants": [
             {
-              "id": 6,
-              "text": "Жаль, что Вы тоже не понимаете о чем говорит собеседник. Придется вернуться и продолжить путь.",
-              "to": 1,
+              "id": 2,
+              "text": "Отправится в путешествие.",
+              "to": 3,
               "conditions": [],
               "actions": [
                 {
-                  "name": "ChangeItemsInInventoryByID",
-                  "parameters": [0,5]
+                  "name": "ChangeActiveCloseButtonsInPanels",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "text": "Дотощив чудище до города показал Алеша его всему народу Ростовскому, радости было много, и пир был длиный и красивый, и я там был и меду пил",
+          "variants": [
+            {
+              "id": 71,
+              "text": "Начать с начала",
+              "conditions": [],
+              "to": 0,
+              "actions": [
+                {
+                  "name": "Win",
+                  "parameters": []
                 },
                 {
-                  "name": "ChangeItemsInInventoryByID",
-                  "parameters": [1,2]
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
                 }
               ]
             }
@@ -99,95 +89,37 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "location": {
-        "background": 3,
-        "character": 4,
+        "background": 2,
+        "character": -1,
         "item": 0,
-        "decorations": [ 0, 1 ]
+        "decorations": [0, 0, 2, 3]
       },
       "dialogs": [
         {
           "id": 3,
-          "text": "Около дороги янычар на привале у костра.",
+          "text": "На поляне камень путеводный, а на нем и написано было",
           "variants": [
             {
-              "id": 7,
-              "text": "Не будем трогать отдыхающего и пойдем вдоль ручья к реке, которая виднеется вдали.",
+              "id": 3,
+              "text": "Кто налево пойдет, тот красоту Руси увидит. (Пойти налево)",
               "conditions": [],
               "to": 4,
               "actions": []
             },
             {
-              "id": 8,
-              "text": "Прямо вроде как лес. Оставим янычара в покое и двинемся вперед к лесу.",
-              "to": 6,
+              "id": 4,
+              "text": "Кто прямо пойдет, тот страх свой с ищет. (Пойти прямо)",
+              "to": 11,
               "conditions": [],
               "actions": []
             },
             {
-              "id": 9,
-              "text": "Дорога уходит дальше вправо. Попробуем глянуть что там.",
+              "id": 5,
+              "text": "Кто направо пойдет, тот в слезах утонет. (Пойти направо)",
               "conditions": [],
-              "to": 7,
-              "actions": []
-            },
-            {
-              "id": 10,
-              "text": "И тут костер. Вернемся наверное к кочевнику. Уйдем обратно налево.",
-              "to": 1,
-              "conditions": [],
-              "actions": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "location": {
-        "background": 0,
-        "character": 1,
-        "item": 2,
-        "decorations": [ 0, 1, 1, 0, 1 ]
-      },
-      "dialogs": [
-        {
-          "id": 4,
-          "text": "На берегу реки горец сушит кожи.",
-          "variants": [
-            {
-              "id": 11,
-              "text": "В кожах нужды пока нет. Продолжим путь по тропинке прямо.",
-              "conditions": [],
-              "to": 9,
-              "actions": []
-            },
-            {
-              "id": 12,
-              "text": "Справа видно лес неподалеку. Двинемся к нему.",
-              "conditions": [],
-              "to": 6,
-              "actions": []
-            },
-            {
-              "id": 13,
-              "text": "Узнать у горца, что он хочет за кожи.",
-              "conditions": [],
-              "to": 5,
-              "actions": []
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "text": "Горец просит за кожи перо Жар-птицы.",
-          "variants": [
-            {
-              "id": 14,
-              "text": "К сожалению у нас его нет. Придется топать дальше.",
-              "conditions": [],
-              "to": 4,
+              "to": 18,
               "actions": []
             }
           ]
@@ -197,36 +129,327 @@
     {
       "id": 4,
       "location": {
-        "background": 1,
-        "character": 3,
-        "item": 1,
-        "decorations": [ 0, 1 ]
+        "background": 3,
+        "character": 0,
+        "item": -1,
+        "decorations": [3, 1, 3]
       },
       "dialogs": [
         {
-          "id": 6,
-          "text": "На опушке леса дозорный стрелец скучает у палатки.",
+          "id": 4,
+          "text": "В лесу поляна, а там у дерева маленький дед сидит и слушает что в округе происходит.",
           "variants": [
             {
-              "id": 15,
-              "text": "Особого интереса вы друг у друга не вызываете. Пойти своей дорогой дальше в лес прямо.",
+              "id": 6,
+              "text": "Прямо виднеется тропа. Идти вперед",
               "conditions": [],
-              "to": 9,
+              "to": 26,
               "actions": []
             },
             {
-              "id": 16,
-              "text": "Слева виднеется река. Пойти к реке.",
-              "to": 4,
-              "conditions": [],
+              "id": 7,
+              "text": "Справа видно лес неподалеку. Двинуться к нему.",
+              "conditions": [
+                {
+                "name": "IsStatMore",
+                "parameters": [1, 5]
+                }
+              ],
+              "to": 11,
               "actions": []
+            },
+            {
+              "id": 8,
+              "text": "Вернуться к путеводному камню.",
+              "conditions": [],
+              "to": 3,
+              "actions": []
+            },
+            {
+              "id": 9,
+              "text": "Поговорить с дедом.",
+              "conditions": [
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [0,0]
+                }
+              ],
+              "to": 5,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [0]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 10,
+              "text": "Поговорить с лешим.",
+              "conditions": [
+                {
+                  "name": "IsAnswered",
+                  "parameters": [9]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [0,1]
+                }
+              ],
+              "to": 8,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [0]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 11,
+              "text": "Поговорить с лешим.",
+              "conditions": [
+                {
+                  "name": "IsAnswered",
+                  "parameters": [10]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [0,2]
+                }
+              ],
+              "to": 9,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [0]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Что ты тут шумишь да зверей пугаешь?",
+          "variants": [
+            {
+              "id": 12,
+              "text": "Ты ли это Чудо Юдо на земле русской гадишь, по ночам поля топчишь да скотинушку тоскаешь?.",
+              "conditions": [],
+              "to": 6,
+              "actions": []
+            },
+            {
+              "id": 13,
+              "text": "Что ты тут делаешь?.",
+              "conditions": [],
+              "to":7,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "text": "Что ты , что ты, Леший я, добрый я, слежу за порядком в лесу да зверям диким помогаю. Коли богатырь ты, может помог мне...",
+          "variants": [
+            {
+              "id": 14,
+              "text": "Некогда мне с тобой возится , мне Чуду юду надо изловить.",
+              "conditions": [],
+              "to": 4,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [0,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 15,
+              "text": "Хорошо, помогу тебе.",
+              "conditions": [],
+              "to": 9,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [0,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "text": "Леший я, добрый я, слежу за порядком в лесу да зверям диким помогаю. Коли богатырь ты, может помог мне...",
+          "variants": [
+            {
+              "id": 16,
+              "text": "Некогда мне с тобой возится , мне Чуду юду надо изловить.",
+              "conditions": [],
+              "to": 4,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [0,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
             },
             {
               "id": 17,
-              "text": "Правее дорога. Отправиться по дороге направо куда глаза глядят.",
-              "to": 7,
+              "text": "Хорошо, помогу тебе.",
               "conditions": [],
-              "actions": []
+              "to": 9,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [0,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "text": "Ну что поможешь мне?",
+          "variants": [
+            {
+              "id": 18,
+              "text": "Некогда мне с тобой возится, мне Чуду юду надо изловить.",
+              "conditions": [],
+              "to": 4,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [0,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 19,
+              "text": "Хорошо, помогу тебе.",
+              "conditions": [],
+              "to": 9,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [0,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "text": "Спасибо тебе. Злые люди капканы по лесу раставили, помоги мне их собрать, да зверей спасти. Принеси мне 10 штук",
+          "variants": [
+            {
+              "id": 20,
+              "text": "Отправится искать капканы",
+              "conditions": [],
+              "to": 4,
+              "actions": [
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 21,
+              "text": "Отдать собраные капканы.",
+              "conditions": [
+                {
+                  "name": "IsObjectsInInventory",
+                  "parameters": [1, 4]
+                }
+              ],
+              "to": 10,
+              "actions": [
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [1, -4]
+                },
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [5, 1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "text": "Спасибо тебе за помощь. Вот держи в награду дубинку из самого крепкого дуба, пусть послужит тебе пользой.",
+          "variants": [
+            {
+              "id": 20,
+              "text": "Поблагодарить и отправиться дальше",
+              "conditions": [],
+              "to": 4,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [0,3]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
             }
           ]
         }
@@ -235,42 +458,327 @@
     {
       "id": 5,
       "location": {
-        "background": 3,
-        "character": 5,
-        "item": 5,
-        "decorations": [ 0, 0, 1 ]
+        "background": 4,
+        "character": 1,
+        "item": -1,
+        "decorations": [0, 2, 3]
       },
       "dialogs": [
         {
-          "id": 7,
-          "text": "У дороги бродит медведь и кто-то оставил целый кошель золота. Ощущение, что это все, что осталось от предыдущего путника...",
+          "id": 11,
+          "text": "На пути изба старая, мхом поросшая. а рядом стоит бабка старая, одноглазая да горбатая.",
           "variants": [
             {
-              "id": 18,
-              "text": "Медведь выглядит грозно. Не стоит его беспокоить. Пойдем прямо, пока он нас не заметил.",
+              "id": 21,
+              "text": "Прямо за избой виднеется тропа. Идти вперед",
               "conditions": [],
-              "to": 9,
+              "to": 27,
               "actions": []
             },
             {
-              "id": 19,
-              "text": "Жадность... Может рискнуть и подобраться поближе? А была, не была!",
+              "id": 22,
+              "text": "Справа видно болото большое. Двинуться к нему.",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [1, 3]
+                }
+              ],
+              "to": 18,
+              "actions": []
+            },
+            {
+              "id": 23,
+              "text": "Вернуться к путеводному камню.",
               "conditions": [],
-              "to": 8,
+              "to": 3,
+              "actions": []
+            },
+            {
+              "id": 24,
+              "text": "Поговорить с бабкой.",
+              "conditions": [
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [1,0]
+                }
+              ],
+              "to": 12,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 25,
+              "text": "Поговорить с Бабой Ягой.",
+              "conditions": [
+                {
+                  "name": "IsAnswered",
+                  "parameters": [24]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [1,1]
+                }
+              ],
+              "to": 15,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 26,
+              "text": "Поговорить с Бабой Ягой.",
+              "conditions": [
+                {
+                  "name": "IsAnswered",
+                  "parameters": [25]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [1,2]
+                }
+              ],
+              "to": 16,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "text": "Что ты ищещь, бродишь тут путник?",
+          "variants": [
+            {
+              "id": 27,
+              "text": "Ты ли это Чудо Юдо на земле русской гадишь, по ночам поля топчишь да скотинушку тоскаешь?",
+              "conditions": [],
+              "to": 13,
+              "actions": []
+            },
+            {
+              "id": 28,
+              "text": "Ты одна тут живешь?",
+              "conditions": [],
+              "to": 14,
               "actions": []
             }
           ]
         },
         {
-          "id": 8,
-          "text": "Ох. Это была плохая идея... Медведь выглядит голодным и ветер донес до него Ваш запах.",
+          "id": 13,
+          "text": "Что ты, что ты милок, не чудовище я, ошибся ты. Бабушка Яга я старая, живу в лесу одна, ни кого не обижаю да всем добра желаю. Коли богатырь милок, помог бы старой...",
           "variants": [
             {
-              "id": 20,
-              "text": "Разворот. Добыча не стоит того, чтобы иметь проблемы с голодным медведем и закончить квест досрочно.",
+              "id": 29,
+              "text": "Не до тебя мне старая, мне Чуду юду надо изловить.",
               "conditions": [],
-              "to": 7,
-              "actions": []
+              "to": 11,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [1,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 30,
+              "text": "Хорошо, помогу тебе.",
+              "conditions": [],
+              "to": 16,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [1,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "text": "Бабушка Яга я старая, живу в лесу одна, ни кого не обижаю да всем добра желаю. Коли богатырь милок, помог бы старой...",
+          "variants": [
+            {
+              "id": 31,
+              "text": "Не до тебя мне старая, мне Чуду юду надо изловить.",
+              "conditions": [],
+              "to": 11,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [1,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 32,
+              "text": "Хорошо, помогу тебе.",
+              "conditions": [],
+              "to": 16,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [1,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "text": "Ну что поможешь мне?",
+          "variants": [
+            {
+              "id": 33,
+              "text": "Не до тебя мне старая, мне Чуду юду надо изловить.",
+              "conditions": [],
+              "to": 11,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [1,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 34,
+              "text": "Хорошо, помогу тебе.",
+              "conditions": [],
+              "to": 16,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [1,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "text": "Спасибо тебе. Помоги мне грибы съестные найти, да к зиме подготовится. Принеси мне 15 штук",
+          "variants": [
+            {
+              "id": 35,
+              "text": "Отправится искать грибы",
+              "conditions": [],
+              "to": 11,
+              "actions": [
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 36,
+              "text": "Отдать собраные грибы.",
+              "conditions": [
+                {
+                  "name": "IsObjectsInInventory",
+                  "parameters": [2, 6]
+                }
+              ],
+              "to": 17,
+              "actions": [
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [2, -6]
+                },
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [6, 1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "text": "Спасибо тебе за помошь твою. Вот держи в награду пирог чудодейственный, сил прибавляющий да ума набирающий.",
+          "variants": [
+            {
+              "id": 37,
+              "text": "Поблагодарить и отправиться дальше",
+              "conditions": [],
+              "to": 11,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [1,3]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
             }
           ]
         }
@@ -279,34 +787,634 @@
     {
       "id": 6,
       "location": {
-        "background": 4,
-        "character": 0,
-        "item": 3,
-        "decorations": [ 0, 1 ]
+        "background": 5,
+        "character": 2,
+        "item": 1,
+        "decorations": [0, 2, 1]
       },
       "dialogs": [
         {
-          "id": 9,
-          "text": "Около добротного дома богатырь сторожит сундук.",
+          "id": 18,
+          "text": "Впереди болото черное. Как перейти его, да так чтоб в нем самому и незгинуть?",
           "variants": [
             {
-              "id": 17,
-              "text": "Поведать богатырю о своих приключениях, если их так можно назвать.",
+              "id": 38,
+              "text": "Впереди мелководье, можно пройти. Идти вперед",
+              "conditions": [
+                {
+                  "name": "IsAnswered",
+                  "parameters": [54]
+                }
+              ],
+              "to": 28,
+              "actions": []
+            },
+            {
+              "id": 39,
+              "text": "Слева виден лес густой. Двинуться к нему.",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [1, 3]
+                }
+              ],
+              "to": 11,
+              "actions": []
+            },
+            {
+              "id": 40,
+              "text": "Вернуться к путеводному камню.",
               "conditions": [],
+              "to": 3,
+              "actions": []
+            },
+            {
+              "id": 41,
+              "text": "Поговорить с чудищем.",
+              "conditions": [
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [2,0]
+                }
+              ],
+              "to": 19,
               "actions": [
                 {
-                  "name": "Win",
+                  "name": "ChangeDialogImage",
+                  "parameters": [2]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
                   "parameters": []
                 }
               ]
             },
             {
-              "id": 18,
-              "text": "Потребовать содержимое сундука.",
+              "id": 42,
+              "text": "Поговорить с Водяным.",
+              "conditions": [
+                {
+                  "name": "IsAnswered",
+                  "parameters": [41]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [2,1]
+                }
+              ],
+              "to": 22,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [2]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 43,
+              "text": "Поговорить с Водяным.",
+              "conditions": [
+                {
+                  "name": "IsAnswered",
+                  "parameters": [42]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [2,2]
+                }
+              ],
+              "to": 23,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [2]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 56,
+              "text": "Подойти поближе и расмотреть камень на ручье",
+              "conditions": [
+                {
+                  "name": "IsAnswered",
+                  "parameters": [54]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [2,2]
+                }
+              ],
+              "to": 35,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "text": "Чего по болотам моим ходишь, утонуть хочешь?",
+          "variants": [
+            {
+              "id": 44,
+              "text": "Ты ли это Чудо Юдо на земле русской гадишь, по ночам поля топчишь да скотинушку тоскаешь?",
               "conditions": [],
+              "to": 20,
+              "actions": []
+            },
+            {
+              "id": 45,
+              "text": "Ты что тут делаешь?",
+              "conditions": [],
+              "to": 21,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "text": "Что ты я и не ухожу далеко от моих болот. Я Водяной, царство мое болото это, а слуги мои лягушки да пиявки. Коли богатырь ты, помог бы в одном деле...",
+          "variants": [
+            {
+              "id": 46,
+              "text": "Не до тебя мне водяной, мне Чуду юду надо изловить.",
+              "conditions": [],
+              "to": 18,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [2,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 47,
+              "text": "Хорошо, помогу тебе.",
+              "conditions": [],
+              "to": 23,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [2,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "text": "Я Водяной, царство мое болото это, а слуги мои лягушки да пиявки. Коли богатырь ты, помог бы в одном деле...",
+          "variants": [
+            {
+              "id": 48,
+              "text": "Не до тебя мне водяной, мне Чуду юду надо изловить.",
+              "conditions": [],
+              "to": 18,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [1,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 49,
+              "text": "Хорошо, помогу тебе.",
+              "conditions": [],
+              "to": 23,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [2,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "text": "Ну что поможешь мне?",
+          "variants": [
+            {
+              "id": 50,
+              "text": "Не до тебя мне водяной, мне Чуду юду надо изловить.",
+              "conditions": [],
+              "to": 18,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [2,1]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 51,
+              "text": "Хорошо, помогу тебе.",
+              "conditions": [],
+              "to": 23,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [2,2]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "text": "Спасибо тебе. Помоги мне камень сдвинуть, чтоб ручей освободить",
+          "variants": [
+            {
+              "id": 52,
+              "text": "Попробовать сдвинуть камень",
+              "conditions": [
+                {
+                  "name": "IsStatLess",
+                  "parameters": [0,5]
+                }
+              ],
+              "to": 24,
+              "actions": [
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 53,
+              "text": "С легкостью убрать камень",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [0,4]
+                }
+              ],
+              "to": 25,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 35,
+          "text": "Камень выглядит так, что его можно отодвинуть",
+          "variants": [
+            {
+              "id": 56,
+              "text": "Попробовать сдвинуть камень",
+              "conditions": [
+                {
+                  "name": "IsStatLess",
+                  "parameters": [0,5]
+                }
+              ],
+              "to": 24,
+              "actions": []
+            },
+            {
+              "id": 57,
+              "text": "С легкостью убрать камень",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [0,4]
+                }
+              ],
+              "to": 25,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "text": "Не выходит тяжеловат камень",
+          "variants": [
+            {
+              "id": 54,
+              "text": "Отойти от камня",
+              "conditions": [],
+              "to": 18,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "text": "Спасибо тебе за помощь твою, вот держи в награду сеть морскую, крепкую да упругую, поймать хоть кита можно. Ступай по этой тропинке да не сворачивай, так из болота и выйдешь",
+          "variants": [
+            {
+              "id": 55,
+              "text": "Поблагодарить и отправиться дальше",
+              "conditions": [],
+              "to": 18,
+              "actions": [
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [7, 1]
+                },
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [2,3]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "location": {
+        "background": 6,
+        "character": -1,
+        "item": -1,
+        "decorations": [3, 3]
+      },
+      "dialogs": [
+        {
+          "id": 26,
+          "text": "Проходя по тропинке сквозь густую рощу не встерчается ничего кроме берез.",
+          "variants": [
+            {
+              "id": 58,
+              "text": "Впереди виднеется темный дремучий лес. Идти вперед",
+              "conditions": [],
+              "to": 29,
+              "actions": []
+            },
+            {
+              "id": 59,
+              "text": "Вернуться назад к Лешиму.",
+              "conditions": [],
+              "to": 4,
+              "actions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "location": {
+        "background": 7,
+        "character": -1,
+        "item": -1,
+        "decorations": [2, 0]
+      },
+      "dialogs": [
+        {
+          "id": 27,
+          "text": "Проходя по тропинке через густую рощу не встерчается ничего кроме густых ветвей деревьев.",
+          "variants": [
+            {
+              "id": 60,
+              "text": "Впереди виднеется темный дремучий лес. Идти вперед",
+              "conditions": [],
+              "to": 29,
+              "actions": []
+            },
+            {
+              "id": 61,
+              "text": "Вернуться назад к дому Бабы Яги.",
+              "conditions": [],
+              "to": 11,
+              "actions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "location": {
+        "background": 8,
+        "character": -1,
+        "item": -1,
+        "decorations": [0, 3]
+      },
+      "dialogs": [
+        {
+          "id": 28,
+          "text": "Проходя по мелководью ,по зарасшей тропинке не встерчается ничего кроме густых ветвей деревьев.",
+          "variants": [
+            {
+              "id": 60,
+              "text": "Впереди виднеется темный дремучий лес. Идти вперед",
+              "conditions": [],
+              "to": 29,
+              "actions": []
+            },
+            {
+              "id": 61,
+              "text": "Вернуться назад к болоту.",
+              "conditions": [],
+              "to": 18,
+              "actions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "location": {
+        "background": 9,
+        "character": 3,
+        "item": 2,
+        "decorations": []
+      },
+      "dialogs": [
+        {
+          "id": 29,
+          "text": "Пробирайся черз дремучий лес, попав на поляну, впереди стоит Чудо Юдо.",
+          "variants": [
+            {
+              "id": 62,
+              "text": "Рискнуть и попробовать одолеть чудище",
+              "conditions": [],
+              "to": 30,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [3]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "id": 63,
+              "text": "Убежать прочь из лесу",
+              "conditions": [],
+              "to": 3,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "text": "Очень быстрое оно оказалось, прыгало и бегало в разные стороны",
+          "variants": [
+            {
+              "id": 64,
+              "text": "Попытаться его поймать руками",
+              "conditions": [
+                
+              ],
+              "to": 33,
+              "actions": []
+            },
+            {
+              "id": 65,
+              "text": "Попытаться его поймать в сеть",
+              "conditions": [
+                
+              ],
+              "to": 31,
+              "actions": [
+                {
+                  "name": "ChangeDialogImage",
+                  "parameters": [4]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 31,
+          "text": "Ловким броском чудище оказалость в сети, но пытается порвать сеть",
+          "variants": [
+            {
+              "id": 66,
+              "text": "Ударить его кулаком",
+              "conditions": [
+                
+              ],
+              "to": 33,
+              "actions": []
+            },
+            {
+              "id": 67,
+              "text": "Ударить его дубинкой",
+              "conditions": [
+                
+              ],
+              "to": 32,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "text": "Хорошенько ударив его дубиной, чудище перестало рвать сеть и успакоилось",
+          "variants": [
+            {
+              "id": 68,
+              "text": "Отнести его в город и показать народу ростовскому",
+              "conditions": [],
+              "to": 34,
+              "actions": []
+            },
+            {
+              "id": 69,
+              "text": "Отпустить чудище и попросить его не приходить на наши земли",
+              "conditions": [],
+              "to": 33,
+              "actions": [
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "text": "Убежало чудище, но возвращалось и кошмарило народ Ростовский, и впредь было более осторожное, что его никто найти не мог",
+          "variants": [
+            {
+              "id": 70,
+              "text": "Начать с начала",
+              "conditions": [],
+              "to": 0,
               "actions": [
                 {
                   "name": "Lose",
+                  "parameters": []
+                  
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeActiveCloseButtonsInPanels",
                   "parameters": []
                 }
               ]

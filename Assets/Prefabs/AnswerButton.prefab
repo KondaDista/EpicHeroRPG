@@ -99,7 +99,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.44313726, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 1, g: 0.7584134, b: 0.07075471, a: 1}
     m_PressedColor: {r: 0.6037736, g: 0.31207484, b: 0, a: 1}
     m_SelectedColor: {r: 1, g: 0.7568628, b: 0.07058824, a: 1}
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 16
-  m_fontSizeMax: 36
+  m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
