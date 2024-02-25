@@ -32,7 +32,7 @@ namespace Player
 
         private void ChangeStartQuestState()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 _quests.Add(0);
             }

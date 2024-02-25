@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,6 +20,12 @@ namespace UI
         [SerializeField] private TMP_Text _expText;
         [SerializeField] private TMP_Text _healthText;
 
+        [SerializeField] private Vector3 startPosition;
+        [SerializeField] private Vector3 endPosition;
+        [SerializeField] private float step;
+        [SerializeField] private float progress;
+        
+
         private void OnEnable()
         {
             _player.CharacteristicsChanged += UpdateView;
@@ -31,8 +38,22 @@ namespace UI
         
         public void OpenClosePanel()
         {
-            gameObject.SetActive(!gameObject.activeSelf);
+            StartCoroutine(transform.localPosition == startPosition
+                ? MovePanel(startPosition, endPosition)
+                : MovePanel(endPosition, startPosition));
         }
+
+        private IEnumerator MovePanel(Vector3 startPos, Vector3 endPos)
+        {
+            while (transform.localPosition != endPos)
+            {
+                transform.localPosition = Vector3.Lerp(startPos, endPos, progress);
+                progress += step;
+                yield return new WaitForSeconds(0.005f);
+            }
+
+            progress = 0;
+        } 
         
         public void ChangeActiveCloseButton()
         {
@@ -46,7 +67,7 @@ namespace UI
             _luckText.text = newCharacteristic[2].ToString();
             _enduranceText.text = newCharacteristic[3].ToString();
             _expText.text = exp.ToString();
-            _healthText.text = $"{health}/{maxHealth}";
+            _healthText.text = $"{health} из {maxHealth}";
         }
     }
 }

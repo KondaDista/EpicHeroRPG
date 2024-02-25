@@ -23,11 +23,18 @@ namespace Player
             Items[id] += amount;
             if (Items[id] < 0)
                 Items[id] = 0;
+            
+            InventoryChanged?.Invoke(id, Items[id]);
         }
 
         public bool IsObjectsInInventory(int id, int count)
         {
             return Items[id] >= count;
+        }
+        
+        public bool IsObjectsEqualInInventory(int id, int count)
+        {
+            return Items[id] == count;
         }
     }
 }

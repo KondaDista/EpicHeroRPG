@@ -26,12 +26,12 @@ namespace UI
                 _mainButton.onClick.AddListener(() =>
                 {
                     MethodFromStringExecuter.Instance.InvokeMethod(action.name, objArray);
-                    Game.Instance.SaveAnswer(variant.id);
                 });
             }
             _mainButton.onClick.AddListener(() =>
             {
                 GameLog.Instance.Log($"Выбран вариант: {variant.text}");
+                Game.Instance.SaveAnswer(variant.id);
                 Game.Instance.GoToDialog(variant.to);
             });
         }

@@ -140,6 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052832279129217495}
   - component: {fileID: 39857250120073229}
+  - component: {fileID: 8143084739193291129}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -175,3 +176,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f77c307d3e40ac9bcdb72adf704f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8143084739193291129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119165736095988543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47841b5ae0f9534586eb81142bded54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IamgeGO: {fileID: 1003013025190672696}
+  answerCheck: 77

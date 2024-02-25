@@ -18,7 +18,7 @@ public class Game : MonoBehaviour
     [SerializeField] private LocationBuilder _locationBuilder;
     
     private List<GameNode> _gameNodes;
-    private readonly List<int> _savedAnswersId = new List<int>();
+    private List<int> _savedAnswersId = new List<int>();
     private GameNode _currenGameNode;
     private DialogNode _currenDialogNode;
 

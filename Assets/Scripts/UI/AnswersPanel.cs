@@ -29,7 +29,7 @@ namespace UI
                 foreach (var condition in variant.conditions)
                 {
                     object[] objArray = condition.parameters.Cast<object>().ToArray();
-                    isCondition = MethodFromStringExecuter.Instance.InvokeConditionMethod(condition.name, objArray);
+                    isCondition = isCondition && MethodFromStringExecuter.Instance.InvokeConditionMethod(condition.name, objArray);
                 }
                 if (!isCondition)
                     continue;

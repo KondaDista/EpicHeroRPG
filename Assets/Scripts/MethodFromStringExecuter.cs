@@ -1,9 +1,5 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using Player;
-using Unity.VisualScripting.FullSerializer.Internal;
-using UnityEditor.Profiling;
-using UnityEngine.Events;
 
 ///<summary>
 /// Обёртка для вызова методов с помощтю строки и списка аргументов.
@@ -93,6 +89,8 @@ public class MethodFromStringExecuter
         _player.IsStatEqual(id, value);
     public bool IsObjectsInInventory(int id, int count) =>
         _inventory.IsObjectsInInventory(id, count);
+public bool IsObjectsEqualInInventory(int id, int count) =>
+        _inventory.IsObjectsEqualInInventory(id, count);
 
     #endregion
 }

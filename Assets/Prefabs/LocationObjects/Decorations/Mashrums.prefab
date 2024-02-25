@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemId: 0
-  _count: 1
+  _count: 2
   _exp: 3
 --- !u!61 &7976819634800217727
 BoxCollider2D:

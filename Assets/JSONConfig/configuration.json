@@ -39,7 +39,7 @@
           "variants": [
             {
               "id": 1,
-              "text": "Вызваться победить чудише.",
+              "text": "Я пойду. Доколе, это Чудо Юдо терзать землю русскую будет, поля и скотину топтать да красти будет",
               "to": 2,
               "conditions": [],
               "actions": []
@@ -110,7 +110,7 @@
             },
             {
               "id": 4,
-              "text": "Кто прямо пойдет, тот страх свой с ищет. (Пойти прямо)",
+              "text": "Кто прямо пойдет, тот страх свой сищет. (Пойти прямо)",
               "to": 11,
               "conditions": [],
               "actions": []
@@ -223,10 +223,6 @@
               "id": 11,
               "text": "Поговорить с лешим.",
               "conditions": [
-                {
-                  "name": "IsAnswered",
-                  "parameters": [10]
-                },
                 {
                   "name": "IsStateQuest",
                   "parameters": [0,2]
@@ -386,7 +382,7 @@
         },
         {
           "id": 9,
-          "text": "Спасибо тебе. Злые люди капканы по лесу раставили, помоги мне их собрать, да зверей спасти. Принеси мне 10 штук",
+          "text": "Злые люди капканы по лесу раставили, помоги мне их собрать, да зверей спасти. Принеси мне 12 штук",
           "variants": [
             {
               "id": 20,
@@ -410,18 +406,18 @@
               "conditions": [
                 {
                   "name": "IsObjectsInInventory",
-                  "parameters": [1, 4]
+                  "parameters": [1, 12]
                 }
               ],
               "to": 10,
               "actions": [
                 {
                   "name": "ChangeItemsInInventoryByID",
-                  "parameters": [1, -4]
+                  "parameters": [1, -12]
                 },
                 {
                   "name": "ChangeItemsInInventoryByID",
-                  "parameters": [5, 1]
+                  "parameters": [8, 1]
                 }
               ]
             }
@@ -429,7 +425,7 @@
         },
         {
           "id": 10,
-          "text": "Спасибо тебе за помощь. Вот держи в награду дубинку из самого крепкого дуба, пусть послужит тебе пользой.",
+          "text": "Благодарствую за помощь. Вот держи в награду дубинку из самого крепкого дуба, пусть послужит тебе пользой.",
           "variants": [
             {
               "id": 20,
@@ -473,6 +469,18 @@
               "text": "Прямо за избой виднеется тропа. Идти вперед",
               "conditions": [],
               "to": 27,
+              "actions": []
+            },
+            {
+              "id": 80,
+              "text": "Cлево видно лес неподалеку. Двинуться к нему.",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [1, 5]
+                }
+              ],
+              "to": 4,
               "actions": []
             },
             {
@@ -552,10 +560,6 @@
               "id": 26,
               "text": "Поговорить с Бабой Ягой.",
               "conditions": [
-                {
-                  "name": "IsAnswered",
-                  "parameters": [25]
-                },
                 {
                   "name": "IsStateQuest",
                   "parameters": [1,2]
@@ -715,7 +719,7 @@
         },
         {
           "id": 16,
-          "text": "Спасибо тебе. Помоги мне грибы съестные найти, да к зиме подготовится. Принеси мне 15 штук",
+          "text": "Помоги мне грибы съестные найти, да к зиме подготовится. Принеси мне 30 штук",
           "variants": [
             {
               "id": 35,
@@ -739,18 +743,18 @@
               "conditions": [
                 {
                   "name": "IsObjectsInInventory",
-                  "parameters": [2, 6]
+                  "parameters": [0, 30]
                 }
               ],
               "to": 17,
               "actions": [
                 {
                   "name": "ChangeItemsInInventoryByID",
-                  "parameters": [2, -6]
+                  "parameters": [0, -30]
                 },
                 {
                   "name": "ChangeItemsInInventoryByID",
-                  "parameters": [6, 1]
+                  "parameters": [9, 1]
                 }
               ]
             }
@@ -758,7 +762,7 @@
         },
         {
           "id": 17,
-          "text": "Спасибо тебе за помошь твою. Вот держи в награду пирог чудодейственный, сил прибавляющий да ума набирающий.",
+          "text": "Ой молодечик какой, помог бабушке. Вот держи в награду пирог чудодейственный, сил прибавляющий да ума набирающий.",
           "variants": [
             {
               "id": 37,
@@ -803,7 +807,7 @@
               "conditions": [
                 {
                   "name": "IsAnswered",
-                  "parameters": [54]
+                  "parameters": [55]
                 }
               ],
               "to": 28,
@@ -886,10 +890,6 @@
               "id": 43,
               "text": "Поговорить с Водяным.",
               "conditions": [
-                {
-                  "name": "IsAnswered",
-                  "parameters": [42]
-                },
                 {
                   "name": "IsStateQuest",
                   "parameters": [2,2]
@@ -999,7 +999,7 @@
               "actions": [
                 {
                   "name": "ChangeQuestState",
-                  "parameters": [1,1]
+                  "parameters": [2,1]
                 },
                 {
                   "name": "OpenCloseDialogImagePanel",
@@ -1065,7 +1065,7 @@
         },
         {
           "id": 23,
-          "text": "Спасибо тебе. Помоги мне камень сдвинуть, чтоб ручей освободить",
+          "text": "Помоги мне камень сдвинуть, чтоб ручей освободить",
           "variants": [
             {
               "id": 52,
@@ -1098,7 +1098,12 @@
                 }
               ],
               "to": 25,
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [2,3]
+                }
+              ]
             }
           ]
         },
@@ -1128,7 +1133,20 @@
                 }
               ],
               "to": 25,
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [2,3]
+                },
+                {
+                  "name": "OpenCloseDialogImagePanel",
+                  "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
+                }
+              ]
             }
           ]
         },
@@ -1147,7 +1165,7 @@
         },
         {
           "id": 25,
-          "text": "Спасибо тебе за помощь твою, вот держи в награду сеть морскую, крепкую да упругую, поймать хоть кита можно. Ступай по этой тропинке да не сворачивай, так из болота и выйдешь",
+          "text": "Благодарствую за помощь твою, вот держи в награду сеть морскую, крепкую да упругую, поймать хоть кита можно. Ступай по этой тропинке да не сворачивай, так из болота и выйдешь",
           "variants": [
             {
               "id": 55,
@@ -1157,11 +1175,7 @@
               "actions": [
                 {
                   "name": "ChangeItemsInInventoryByID",
-                  "parameters": [7, 1]
-                },
-                {
-                  "name": "ChangeQuestState",
-                  "parameters": [2,3]
+                  "parameters": [10, 1]
                 },
                 {
                   "name": "OpenCloseDialogImagePanel",
@@ -1188,11 +1202,11 @@
       "dialogs": [
         {
           "id": 26,
-          "text": "Проходя по тропинке сквозь густую рощу не встерчается ничего кроме берез.",
+          "text": "Проходя по тропинке сквозь густую рощу впереди виднеется темный дремучий лес.",
           "variants": [
             {
               "id": 58,
-              "text": "Впереди виднеется темный дремучий лес. Идти вперед",
+              "text": "Идти вперед в дремучий лес",
               "conditions": [],
               "to": 29,
               "actions": []
@@ -1213,17 +1227,17 @@
       "location": {
         "background": 7,
         "character": -1,
-        "item": -1,
+        "item": 2,
         "decorations": [2, 0]
       },
       "dialogs": [
         {
           "id": 27,
-          "text": "Проходя по тропинке через густую рощу не встерчается ничего кроме густых ветвей деревьев.",
+          "text": "Проходя по тропинке через густые ветви деревьтев впереди виднеется темный дремучий лес.",
           "variants": [
             {
               "id": 60,
-              "text": "Впереди виднеется темный дремучий лес. Идти вперед",
+              "text": "Идти вперед в дремучий лес",
               "conditions": [],
               "to": 29,
               "actions": []
@@ -1234,6 +1248,148 @@
               "conditions": [],
               "to": 11,
               "actions": []
+            },
+            {
+              "id": 78,
+              "text": "Подойти к сундуку",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [2, 6]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [3, 0]
+                }
+              ],
+              "to": 36,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "text": "Вы подходите к сундуку и думаете что можно сделать",
+          "variants": [
+            {
+              "id": 73,
+              "text": "Исполлзовать ключ",
+              "conditions": [
+                {
+                  "name": "IsObjectsInInventory",
+                  "parameters": [7, 1]
+                }
+              ],
+              "to": 37,
+              "actions": [
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [7, -1]
+                }
+              ]
+            },
+            {
+              "id": 74,
+              "text": "Попробовать разломать сундук",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [0,4]
+                }
+              ],
+              "to": 38,
+              "actions": []
+            },
+            {
+              "id": 75,
+              "text": "Попробовать аккуратно вскрыть замок",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [1,4]
+                }
+              ],
+              "to": 37,
+              "actions": []
+            },
+            {
+              "id": 76,
+              "text": "Пнуть сундук",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [2,9]
+                }
+              ],
+              "to": 37,
+              "actions": []
+            },
+            {
+              "id": 81,
+              "text": "Отойти от сундука",
+              "conditions": [],
+              "to": 27,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "text": "Сундук открылся",
+          "variants": [
+            {
+              "id": 77,
+              "text": "Забрать содержиое",
+              "conditions": [],
+              "to": 27,
+              "actions": [
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [0, 6]
+                },
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [2, 4]
+                },
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [3, 3]
+                },
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [4, 1]
+                },
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [5, 2]
+                },
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [6, 4]
+                },
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [3, 1]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 38,
+          "text": "Сундук разлетелся на щепки, и все что было внутри тоже",
+          "variants": [
+            {
+              "id": 77,
+              "text": "Отойти от разбитого сундука",
+              "conditions": [],
+              "to": 27,
+              "actions": [
+                {
+                  "name": "ChangeQuestState",
+                  "parameters": [3, 1]
+                }
+              ]
             }
           ]
         }
@@ -1250,11 +1406,11 @@
       "dialogs": [
         {
           "id": 28,
-          "text": "Проходя по мелководью ,по зарасшей тропинке не встерчается ничего кроме густых ветвей деревьев.",
+          "text": "Проходя по мелководью ,по зарасшей тропинке впереди виднеется темный дремучий лес.",
           "variants": [
             {
               "id": 60,
-              "text": "Впереди виднеется темный дремучий лес. Идти вперед",
+              "text": "Идти вперед в дремучий лес",
               "conditions": [],
               "to": 29,
               "actions": []
@@ -1265,6 +1421,44 @@
               "conditions": [],
               "to": 18,
               "actions": []
+            },
+            {
+              "id": 79,
+              "text": "Повнимательней присмотреться к деревьям",
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [2,4]
+                },
+                {
+                  "name": "IsObjectsEqualInInventory",
+                  "parameters": [7, 0]
+                },
+                {
+                  "name": "IsStateQuest",
+                  "parameters": [3, 0]
+                }
+              ],
+              "to": 39,
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 39,
+          "text": "Среди ветвей вы находите ключ. Если есть ключ, значит найдется что им можно открыть",
+          "variants": [
+            {
+              "id": 78,
+              "text": "Забрать ключ",
+              "conditions": [],
+              "to": 28,
+              "actions": [
+                {
+                  "name": "ChangeItemsInInventoryByID",
+                  "parameters": [7, 1]
+                }
+              ]
             }
           ]
         }
@@ -1275,13 +1469,13 @@
       "location": {
         "background": 9,
         "character": 3,
-        "item": 2,
+        "item": -1,
         "decorations": []
       },
       "dialogs": [
         {
           "id": 29,
-          "text": "Пробирайся черз дремучий лес, попав на поляну, впереди стоит Чудо Юдо.",
+          "text": "Пробираясь черзе дремучий лес, впереди стоит Чудо Юдо.",
           "variants": [
             {
               "id": 62,
@@ -1329,13 +1523,20 @@
               "id": 65,
               "text": "Попытаться его поймать в сеть",
               "conditions": [
-                
+                {
+                  "name": "IsObjectsInInventory",
+                  "parameters": [10, 1]
+                }
               ],
               "to": 31,
               "actions": [
                 {
                   "name": "ChangeDialogImage",
                   "parameters": [4]
+                },
+                {
+                  "name": "IsObjectsInInventory",
+                  "parameters": [10, -1]
                 }
               ]
             }
@@ -1358,7 +1559,10 @@
               "id": 67,
               "text": "Ударить его дубинкой",
               "conditions": [
-                
+                {
+                  "name": "IsObjectsInInventory",
+                  "parameters": [8, 1]
+                }
               ],
               "to": 32,
               "actions": []
@@ -1385,6 +1589,10 @@
                 {
                   "name": "OpenCloseDialogImagePanel",
                   "parameters": []
+                },
+                {
+                  "name": "ChangeVisibleCharacter",
+                  "parameters": []
                 }
               ]
             }
@@ -1392,13 +1600,13 @@
         },
         {
           "id": 33,
-          "text": "Убежало чудище, но возвращалось и кошмарило народ Ростовский, и впредь было более осторожное, что его никто найти не мог",
+          "text": "Убежало чудище, но возвращалось и кошмарило народ Ростовский, и впредь было более осторожное.",
           "variants": [
             {
               "id": 70,
-              "text": "Начать с начала",
+              "text": "Попробовать еще раз",
               "conditions": [],
-              "to": 0,
+              "to": 3,
               "actions": [
                 {
                   "name": "Lose",
@@ -1411,10 +1619,6 @@
                 },
                 {
                   "name": "ChangeVisibleCharacter",
-                  "parameters": []
-                },
-                {
-                  "name": "ChangeActiveCloseButtonsInPanels",
                   "parameters": []
                 }
               ]
